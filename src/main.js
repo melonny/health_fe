@@ -8,6 +8,17 @@ import axios from 'axios'
 
 Vue.prototype.$http = axios
 axios.defaults.baseURL = "http://localhost:9000"
+axios.interceptors.request.use(
+  config=>{
+    if(sessionStorage.getItem("token")){
+      config.headers.Authorization = sessionStorage.getItem("token");
+    }
+    return config;
+  },
+  err=>{
+    return Promise.reject(err);
+  }
+)
 
 Vue.config.productionTip = false
 

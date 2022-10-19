@@ -50,6 +50,7 @@ export default {
                 const{data:res} = await this.$http.post("login",this.loginForm);
                 if( res.flag == "ok"){
                     window.sessionStorage.setItem("user",res.user);
+                    window.sessionStorage.setItem("token",res.token);
                     this.$message.success("登陆成功");
                     this.$router.push({path:"/home"});
                 }else{
