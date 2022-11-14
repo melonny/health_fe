@@ -19,4 +19,4 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Updates
-2022-10-19 增加axios拦截，配合后端做鉴权
+2022-10-19 add axios, both client-side and server-side done!
